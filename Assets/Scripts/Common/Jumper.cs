@@ -5,9 +5,10 @@ public class Jumper : MonoBehaviour
 {
     public float jumpForce;
     public LayerMask groundMask;
+    public AudioSource source;
 
     private Rigidbody2D rb;
-    private bool isGrounded;
+    public bool isGrounded { get; private set; }
 
     private void Awake()
     {
@@ -22,8 +23,11 @@ public class Jumper : MonoBehaviour
 
     private void Jump()
     {
-        if (isGrounded)
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        if (!isGrounded)
+            return;
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        if(source!= null)
+            source.Play();
     }
 
     private void Update()

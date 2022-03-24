@@ -6,8 +6,10 @@ public class ChestBehaviour3 : MonoBehaviour
 
     public void Interact()
     {
-        if(isTriggered)
-            GetComponent<Animator>().SetTrigger("Open");
+        if (!isTriggered)
+            return;
+        GetComponent<Animator>().SetTrigger("Open");
+        GetComponent<AudioSource>().Play();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
