@@ -120,7 +120,9 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 69c522b457f5820408d612e3aec90dc8
-  m_FloatValues: {}
+  m_FloatValues:
+    d18aa0e30b7da4c479363976695f175c: 0
+    761c01d555bc40c4a8ba247a4594c32d: 0
   m_TransitionOverrides: {}
 --- !u!244 &4318039083516032364
 AudioMixerEffectController:
